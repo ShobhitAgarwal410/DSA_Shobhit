@@ -35,6 +35,7 @@ public class PrimeFactorization {
 				System.out.println(i + "^" + c);
 			}
 		}
+		// This if condition is true when n becomes prime, there is no other factor left and n becomes less than i square
 		if (n > 1) {
 			System.out.println(n + "^" + 1);
 
