@@ -3,7 +3,7 @@ package study.interviewbit.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class ChipsFactory {
+public class PositiveNegative {
 
 	public static void main(String[] args) {
 		ArrayList<Integer> A = new ArrayList<Integer>();
@@ -27,14 +27,18 @@ public class ChipsFactory {
 	}
 
 	public static ArrayList<Integer> solve(ArrayList<Integer> A) {
-		// here we are swapping the non zero with 0
-		int i = 0, j = 0;
+		ArrayList<Integer> ans = new ArrayList<Integer>();
+		int i = 0, j = 0, k = 0;
 		while (j < A.size()) {
-			if (A.get(j) != 0) {
-				Collections.swap(A, i++, j);
+			if (A.get(j) > 0) {
+				i++;
+			} else if (A.get(j) < 0) {
+				k++;
 			}
 			j++;
 		}
-		return A;
+		ans.add(i);
+		ans.add(k);
+		return ans;
 	}
 }
