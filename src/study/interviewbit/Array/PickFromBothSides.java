@@ -5,20 +5,35 @@ import java.util.ArrayList;
 public class PickFromBothSides {
 
 	public static void main(String[] args) {
-
+		// find max possible sum by picking max k numbers from both end
+		ArrayList<Integer> A = new ArrayList<Integer>();
+		A.add(5);
+		A.add(3);
+		A.add(-1);
+		A.add(4);
+		A.add(2);
+		System.out.println("ans");
+		System.out.println(solve(A, 3));
 	}
 
-	public int solve(ArrayList<Integer> A, int B) {
+	public static int solve(ArrayList<Integer> A, int B) {
 		int n = A.size();
-		int i = 0, j = n;
-		int c1 = 0, c2 = 0;
-		while (i <= B && j >= n - B) {
-			c1 += A.get(i);
-			i++;
-			c2 += A.get(j);
-			j--;
+		int sum = 0, nsum = 0, min;
+		for (int i = 0; i < n; i++) {
+			sum += A.get(i);
 		}
-
-		return c1 > c2 ? c1 : c2;
+		int j = n - B;
+		for (int i = 0; i < n - B; i++) {
+			nsum += A.get(i);
+		}
+		min = nsum;
+		int k = 0;
+		while (j <= n - 1) {
+			nsum = nsum + A.get(j) - A.get(k);
+			min = min > nsum ? nsum : min;
+			k++;
+			j++;
+		}
+		return sum - min;
 	}
 }
