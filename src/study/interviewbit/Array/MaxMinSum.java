@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class MaxMinSum {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		ArrayList<Integer> A = new ArrayList<Integer>();
 		A.add(22);
 		A.add(6);
@@ -18,6 +17,7 @@ public class MaxMinSum {
 		A.add(2);
 		A.add(-5);
 		A.add(8);
+		// return sum of max and MIN element from array
 		System.out.println(solve(A));
 	}
 
