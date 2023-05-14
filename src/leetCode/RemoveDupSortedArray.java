@@ -1,5 +1,7 @@
 package leetCode;
 
+import java.util.Arrays;
+
 public class RemoveDupSortedArray {
 
 	public static void main(String[] args) {
@@ -10,6 +12,7 @@ public class RemoveDupSortedArray {
 	}
 
 	public int removeDuplicates(int[] nums) {
+		Arrays.sort(nums);
 		int k = 0;
 		int length = nums.length;
 		int ans[] = new int[length];

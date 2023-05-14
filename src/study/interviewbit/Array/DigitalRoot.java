@@ -3,7 +3,7 @@ package study.interviewbit.Array;
 public class DigitalRoot {
 
 	public static void main(String[] args) {
-		solve(9909);
+		System.out.println(solve(25));
 	}
 
 	public static int solve(int A) {
