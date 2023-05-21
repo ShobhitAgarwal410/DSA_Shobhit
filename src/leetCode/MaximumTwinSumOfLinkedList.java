@@ -18,7 +18,7 @@ public class MaximumTwinSumOfLinkedList {
 		}
 		int j = n - 1;
 		int maxSum = 0, sum = 0;
-		for (int i = 0; i < arr.length / 2; i++) {
+		for (int i = 0; i < n / 2; i++) {
 			sum += arr[i] + arr[j];
 			j--;
 			maxSum = maxSum < sum ? sum : maxSum;
